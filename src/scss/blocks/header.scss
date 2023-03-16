@@ -1,1 +1,42 @@
+@font-face {
+    font-family: 'Ade';
+    src: url('/assets/fonts/Ade-Display.otf');
+  }
 
+@font-face {
+    font-family: 'Futura';
+    src: url('/assets/fonts/futura/Futura-Book-font.ttf');
+}
+
+@font-face {
+    font-family: 'Futura Italic';
+    src: url('/assets/fonts/futura/Futura-Book-Italic-font.ttf');
+}
+  
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 30px 69px 0 69px;
+    border-bottom: 1px solid #503838;
+}
+
+
+.title{
+    text-transform: uppercase;
+    font-family: 'Ade', sans-serif;
+    letter-spacing: .1rem;
+    font-weight: 100;
+    margin-left: 32px;
+}
+
+
+.button{
+    background-color: #D87E61;
+    padding: 14px 48px ;
+    border-radius: 55px;
+    font-family: 'Futura Italic';
+    text-transform: uppercase;
+    margin-right: 32px;
+}

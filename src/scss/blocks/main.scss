@@ -1,1 +1,51 @@
-/* ESTILOS DEL MAIN */
+.main{
+    margin-top: 100px;
+    margin-left: 17rem;
+    margin-right: 25%;
+}
+
+.bingo{
+    display: flex;
+    justify-content: space-between;
+    &__main-board{
+        width: 550px;
+        height: 500px;
+        background-color: #503838;
+        display: grid;
+        grid-template-columns: repeat(11, 1fr);
+        padding: 1.2rem;
+    }
+
+    &__players-boards{
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        margin-top: 5rem;
+    }
+
+    &__player-board{
+        padding: 1.2rem;
+        width: 270px;
+        height: 180px;
+        background-color: #503838;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+    }
+}
+
+.number{
+    font-family: 'Futura', sans-serif;
+    background-color: white;
+    margin: auto;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+}
+
+.number--selected{
+    background-color: #D87E61;
+}
