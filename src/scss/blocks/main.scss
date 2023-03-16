@@ -1,26 +1,38 @@
 .main{
     margin-top: 100px;
-    margin-left: 17rem;
-    margin-right: 25%;
 }
 
 .bingo{
     display: flex;
-    justify-content: space-between;
+    gap: 6rem;
+    justify-content: center;
+    align-items: center;
     &__main-board{
         width: 550px;
-        height: 500px;
+        height: 460px;
         background-color: #503838;
         display: grid;
         grid-template-columns: repeat(11, 1fr);
         padding: 1.2rem;
+        position: relative;
+
+        &::after{
+            content: 'MAIN BOARD';
+            position: absolute;
+            color: white;
+            font-weight: 500;
+            font-family: 'Futura', sans-serif;
+            bottom: -2.5rem;
+            right: 0;
+            font-size: 1rem;
+        }
     }
 
     &__players-boards{
         display: flex;
         flex-direction: column;
         gap: 2rem;
-        margin-top: 5rem;
+        transform: translateY(2.6rem);
     }
 
     &__player-board{
@@ -31,6 +43,36 @@
         display: grid;
         grid-template-columns: repeat(5, 1fr);
         grid-template-rows: repeat(3, 1fr);
+        position: relative;
+        &::after{
+            top:-2rem;
+            content: 'PLAYER 2';
+            position: absolute;
+            color: #503838;
+            font-family: 'Futura', sans-serif;
+            font-weight: 600;
+            right: 0;
+        }
+    
+    }
+
+    &__player-board--2{
+        &::after{
+            top: auto;
+            bottom: -2rem;
+            right: 0;
+            font-size: 1rem;
+        }
+    }
+
+    &__current-number{
+        padding: 16px 48px;
+        font-family: 'Futura Italic';
+        font-weight: 600;
+        font-size: 1.2rem;
+        border: 1px solid #503838;
+        border-radius: 55px;
+        margin-bottom: 2rem;
     }
 }
 
@@ -38,6 +80,7 @@
     font-family: 'Futura', sans-serif;
     background-color: white;
     margin: auto;
+    font-weight: 600;
     text-align: center;
     display: flex;
     align-items: center;
@@ -48,4 +91,5 @@
 
 .number--selected{
     background-color: #D87E61;
+    color: white;
 }

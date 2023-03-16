@@ -1,7 +1,35 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+
 html {
 }
 body {
+    background-color: #EADFD5;
+    color: #503838;
+    position: relative;
+    height: 96.8vh;
 
-background-color: #EADFD5;
-color: #503838;
+    &::after{
+        content: '';
+        position: absolute;
+        width: 100vw;
+        height: 56%;
+        background-color:  #D87E61;
+        bottom: 0;
+        z-index: -1;
+    }
+
+    &::before{
+        content: '';
+        position: absolute;
+        width: 42px;
+        height: 42px;
+        background-color: white;
+        bottom: 2rem;
+        right: 3rem;
+        border-radius: 50%;
+        box-shadow: -3.25rem 0rem  white, -6.5rem 0rem  white;
+    }
 }

@@ -19,6 +19,9 @@ let numbersRandomCard2 = Array(99)
     .fill()
     .map((_, index) => index +1);
 
+let winner = false;
+let timeoutId;
+
 
 
 
@@ -31,23 +34,33 @@ const extractRandomNumber= array => {
 
 const paintNumberPlayersBoard = (numberSelected) => {
     const player1Numbers = ([...player1.children]);
+    const player2Numbers = ([...player2.children]);
+    console.log(numberSelected);
     player1Numbers.forEach(number => {
-        if(number.textContent === numberSelected)
-        console.log(`El numero seleccionado es ${number}`);
-    })
+        if(Number(number.textContent) === numberSelected){
+            number.classList.add('number--selected')
+        }}
+    );
+    player2Numbers.forEach(number => {
+        if(Number(number.textContent) === numberSelected){
+            number.classList.add('number--selected')
+        }}
+    )
 }
+    
+    
+
 
 
 const paintNumbersMainBoard = () => {
     const numbers =(mainBoard.children);
     let numberRandom = extractRandomNumber(numberToPlay)
     numbers[numberRandom].classList.add('number--selected');
-    console.log(numberRandom + 1);
     paintNumberPlayersBoard(numberRandom + 1)
     currentNumber.textContent = `Number: ${numberRandom + 1}`
 }
 
-paintNumbersMainBoard()
+
 
 
 
@@ -67,4 +80,15 @@ const paintPlayersBoards = (board, array) => {
 
 paintPlayersBoards(player1, numbersRandomCard1)
 paintPlayersBoards(player2, numbersRandomCard2)
-paintNumberPlayersBoard()
+
+
+
+const extractNumberEvery2Seconds = () => {
+    clearTimeout(timeoutId);
+        paintNumbersMainBoard()
+        paintNumberPlayersBoard()
+  
+      timeoutId = setTimeout(extractNumberEvery2Seconds, 200);
+    }
+
+extractNumberEvery2Seconds()
