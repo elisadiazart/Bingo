@@ -46,7 +46,7 @@
         position: relative;
         &::after{
             top:-2rem;
-            content: 'PLAYER 2';
+            content: 'PLAYER 1';
             position: absolute;
             color: #503838;
             font-family: 'Futura', sans-serif;
@@ -58,6 +58,7 @@
 
     &__player-board--2{
         &::after{
+            content: 'PLAYER 2';
             top: auto;
             bottom: -2rem;
             right: 0;
