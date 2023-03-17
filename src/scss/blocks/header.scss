@@ -40,4 +40,9 @@
     font-weight: 600;
     text-transform: uppercase;
     margin-right: 32px;
+    cursor: pointer;
+    &--disabled{
+        background-color: #d3c2b3;
+        color: #a89584;
+    }
 }
